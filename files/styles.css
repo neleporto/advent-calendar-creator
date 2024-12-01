@@ -20,7 +20,7 @@ header {
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: url('images/background.gif') no-repeat center center fixed; /* Use your image path */
+    background: url('background.gif') no-repeat center center fixed; /* Use your image path */
     background-size: cover; /* Ensure the image covers the entire background */
     display: flex;
     justify-content: center;
