@@ -69,19 +69,19 @@ function openDoor(doorNumber, doorElement) {
   //modalNote.textContent = data.note;
 
   // Load and display the note
-  if (data.note) {
-    fetch(data.note)
-      .then((response) => response.text())
-      .then((noteContent) => {
-        modalNote.textContent = noteContent;
-      })
-      .catch((error) => {
-        modalNote.textContent = "  ";
-        console.error("Error loading note:", error);
-      });
-  } else {
-    modalNote.textContent = "No note available.";
-  }
+  // Display the note directly
+    if (data.note) {
+      const iframeElement = document.createElement("iframe");
+      iframeElement.src = data.note; // Path to the .txt file
+      iframeElement.style.width = "100%";
+      iframeElement.style.height = "150px"; // Adjust height as needed
+      iframeElement.style.border = "none"; // Remove border for a clean look
+      modalNote.innerHTML = ""; // Clear any previous content
+      modalNote.appendChild(iframeElement); // Embed the .txt file in the modal
+    } else {
+      modalNote.textContent = "No note available.";
+    }
+
 
 
   // Play the corresponding song
