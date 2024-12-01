@@ -77,6 +77,10 @@ createButton.addEventListener("click", async () => {
         zip.file("styles.css", stylesCSS);
         zip.file("script.js", scriptJS);
 
+        // Add the background.gif
+        const backgroundGif = await fetch("files/background.gif").then(res => res.blob());
+        zip.file("background.gif", backgroundGif);
+
         // Generate and download ZIP
         zip.generateAsync({ type: "blob" }).then((content) => {
             createButton.classList.add("hidden");
