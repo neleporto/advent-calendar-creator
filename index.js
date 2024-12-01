@@ -78,7 +78,7 @@ createButton.addEventListener("click", async () => {
         zip.file("script.js", scriptJS);
 
         // Add the background.gif
-        //const backgroundGif = await fetch("files/background.gif").then(res => res.blob());
+        const backgroundGif = await fetch("background.gif").then(res => res.blob());
         zip.file("background.gif", backgroundGif);
 
         // Generate and download ZIP
