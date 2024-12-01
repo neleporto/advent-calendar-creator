@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advent Calendar Builder</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/jszip/dist/jszip.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Create Your Advent Calendar</h1>
+        <button id="help-button">?</button>
+    </header>
+    <main>
+        <!-- Background Upload -->
+        <div id="background-section">
+            <h2>Step 1: Choose a Background</h2>
+            <input type="file" id="background-upload" accept="image/*">
+            <div id="background-preview" class="preview">
+                <p>No background uploaded yet.</p>
+            </div>
+        </div>
+
+        <!-- Upload Content for Each Day -->
+        <div id="day-section">
+            <h2>Step 2: Add Content for Each Day</h2>
+            <form id="day-form">
+                <!-- Dynamically generate day inputs -->
+            </form>
+        </div>
+
+        <!-- Create and Download Buttons -->
+        <div id="action-section">
+            <button id="create-button">Create Calendar</button>
+            <button id="download-button" class="hidden">Download ZIP</button>
+        </div>
+
+        <!-- Help Modal -->
+        <div id="help-modal" class="hidden">
+            <div class="modal-content">
+                <h3>How to Create Your Calendar</h3>
+                <p>1. Choose a background image (optional).</p>
+                <p>2. Add content (image, note, and song) for each day.</p>
+                <p>3. Click ‘Create Calendar’ to finalize your calendar, then download it as a ZIP file.</p>
+                <button id="close-help">Close</button>
+            </div>
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>
