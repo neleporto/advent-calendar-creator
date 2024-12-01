@@ -1,0 +1,139 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    color: #000000;
+}
+
+header {
+    text-align: center;
+    background: #ffffff;
+    padding: 20px;
+    position: relative;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+    color: #333;
+}
+
+#help-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    border: none;
+    background: #f84848;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#help-button:hover {
+    background: #ffffff;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-top: 0;
+    text-align: center;
+    color: #000000;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    gap: 20px;
+}
+
+/* Styling Each Day Input Box */
+.day-input {
+    border: 2px solid #80000d;
+    padding: 15px;
+    border-radius: 10px;
+    background: #f84848;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.day-input h3 {
+    margin-top: 0;
+    color: hsl(0, 0%, 100%);
+}
+
+label {
+    font-weight: bold;
+    margin-top: 10px;
+    color: #030000;
+}
+
+input[type="file"],
+textarea {
+    width: 90%; /* Adjust width for alignment */
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+textarea {
+    resize: none;
+    height: 60px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #990101;
+    background: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button.hidden {
+    display: none;
+}
+
+#help-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#help-modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background: #85aae7;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: 0 8px 
