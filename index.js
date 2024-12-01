@@ -73,13 +73,27 @@ createButton.addEventListener("click", async () => {
         const stylesCSS = await fetch("files/styles.css").then((res) => res.text());
         const scriptJS = await fetch("files/script.js").then((res) => res.text());
 
+        // Add the background.gif
+        //const backgroundGif = await fetch("files/background.gif").then(res => res.blob());
+
         zip.file("index.html", indexHTML);
         zip.file("styles.css", stylesCSS);
         zip.file("script.js", scriptJS);
+        //zip.file("background.gif", backgroundGif);
 
-        // Add the background.gif
-        const backgroundGif = await fetch("background.gif").then(res => res.blob());
-        zip.file("background.gif", backgroundGif);
+        // Handle Background GIF
+        let backgroundGif;
+        try {
+            backgroundGif = await fetch("background.gif").then(res => res.blob());
+        } catch (error) {
+            console.warn("Background GIF not found or could not be loaded. Skipping it.");
+            backgroundGif = null; // Fallback if needed
+        }
+
+        if (backgroundGif) {
+            zip.file("background.gif", backgroundGif);
+        }
+
 
         // Generate and download ZIP
         zip.generateAsync({ type: "blob" }).then((content) => {
