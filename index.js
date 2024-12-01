@@ -1,5 +1,5 @@
-const backgroundInput = document.getElementById("background-upload");
-const backgroundPreview = document.getElementById("background-preview");
+//const backgroundInput = document.getElementById("background-upload");
+//const backgroundPreview = document.getElementById("background-preview");
 
 const createButton = document.getElementById("create-button");
 const downloadButton = document.getElementById("download-button");
@@ -29,13 +29,13 @@ for (let i = 1; i <= 24; i++) {
 }
 
 // Handle Background Upload
-backgroundInput.addEventListener("change", (e) => {
-    const file = e.target.files[0];
-    if (file) {
-        backgroundPreview.style.backgroundImage = `url(${URL.createObjectURL(file)})`;
-        backgroundPreview.innerHTML = `<p>Custom background uploaded!</p>`;
-    }
-});
+//backgroundInput.addEventListener("change", (e) => {
+   // const file = e.target.files[0];
+   // if (file) {
+    //    backgroundPreview.style.backgroundImage = `url(${URL.createObjectURL(file)})`;
+     //   backgroundPreview.innerHTML = `<p>Custom background uploaded!</p>`;
+   // }
+//});
 
 // Handle Create Button
 createButton.addEventListener("click", async () => {
@@ -78,7 +78,7 @@ createButton.addEventListener("click", async () => {
         zip.file("script.js", scriptJS);
 
         // Add the background.gif
-        const backgroundGif = await fetch("files/background.gif").then(res => res.blob());
+        //const backgroundGif = await fetch("files/background.gif").then(res => res.blob());
         zip.file("background.gif", backgroundGif);
 
         // Generate and download ZIP
